@@ -33,7 +33,14 @@
 #
 # Copyright 2015 Reppard Walker, unless otherwise noted.
 #
-class envconsul {
+class envconsul (
+  $version  = '0.5.0',
+  $platform = 'linux',
+  $arch     = 'amd64',
+){
 
+  include wget
+  include envconsul::fetch
+  include envconsul::install
 
 }
