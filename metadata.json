@@ -1,6 +1,6 @@
 {
   "name": "reppard-envconsul",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "reppard",
   "summary": "Install and configure envconsul",
   "license": "Apache 2.0",
