@@ -6,7 +6,7 @@ class envconsul::install (
   exec { "tar zxf /tmp/${file_name} --strip-components 1":
     cwd     => '/usr/bin',
     creates => '/usr/bin/envconsul',
-    path    => ['/usr/bin', '/usr/local/bin'],
+    path    => ['/bin', '/usr/bin', '/usr/local/bin'],
     notify  => [ File['cleanup_file'], File['cleanup_dir'] ],
     require => Class[envconsul::fetch],
   }
