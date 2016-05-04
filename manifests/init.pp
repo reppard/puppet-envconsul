@@ -34,10 +34,13 @@
 # Copyright 2015 Reppard Walker, unless otherwise noted.
 #
 class envconsul (
-  $version  = '0.5.0',
-  $platform = 'linux',
-  $arch     = 'amd64',
-){
+  $version      = $::envconsul::params::version,
+  $platform     = $::envconsul::params::platform,
+  $arch         = $::envconsul::params::arch,
+  $releases_url = $::envconsul::params::releases_url,
+  $base_name    = $::envconsul::params::base_name,
+  $extension    = $::envconsul::params::extension,
+) inherits ::envconsl::params {
 
   include wget
   include envconsul::fetch
