@@ -40,7 +40,7 @@ class envconsul (
   $releases_url = $::envconsul::params::releases_url,
   $base_name    = $::envconsul::params::base_name,
   $extension    = $::envconsul::params::extension,
-) inherits ::envconsl::params {
+) inherits ::envconsul::params {
 
   include wget
   include envconsul::fetch

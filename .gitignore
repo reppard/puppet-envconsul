@@ -1,4 +1,5 @@
 /vendor/
 /pkg/
 /.bundle/
+/spec/fixtures/modules/
 Gemfile.lock
