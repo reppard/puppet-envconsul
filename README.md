@@ -1,5 +1,7 @@
 # envconsul
 
+[![Build Status](https://travis-ci.org/reppard/puppet-envconsul.svg?branch=master)](https://travis-ci.org/reppard/puppet-envconsul)
+
 ## Usage
 
 ```shell
