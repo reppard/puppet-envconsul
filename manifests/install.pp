@@ -5,21 +5,23 @@ class envconsul::install (
 ){
   if $file_name =~ /^.*\.zip/ {
     exec { 'unpack':
-      command => "unzip /tmp/${file_name}",
-      cwd     => '/usr/bin',
-      creates => '/usr/bin/envconsul',
-      path    => ['/bin', '/usr/bin', '/usr/local/bin'],
-      notify  => File['cleanup_file'],
-      require => Class['envconsul::fetch'],
+      command     => "unzip /tmp/${file_name}",
+      cwd         => '/usr/bin',
+      creates     => '/usr/bin/envconsul',
+      path        => ['/bin', '/usr/bin', '/usr/local/bin'],
+      refreshonly => true,
+      notify      => File['cleanup_file'],
+      require     => Class['envconsul::fetch'],
     }
   } elsif $file_name =~ /^.*\.tar\.gz/ {
     exec { 'unpack':
-      command => "tar zxf /tmp/${file_name} --strip-components 1",
-      cwd     => '/usr/bin',
-      creates => '/usr/bin/envconsul',
-      path    => ['/bin', '/usr/bin', '/usr/local/bin'],
-      notify  => File['cleanup_file'],
-      require => Class['envconsul::fetch'],
+      command     => "tar zxf /tmp/${file_name} --strip-components 1",
+      cwd         => '/usr/bin',
+      creates     => '/usr/bin/envconsul',
+      path        => ['/bin', '/usr/bin', '/usr/local/bin'],
+      refreshonly => true,
+      notify      => File['cleanup_file'],
+      require     => Class['envconsul::fetch'],
     }
   }
 

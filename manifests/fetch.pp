@@ -13,5 +13,7 @@ class envconsul::fetch (
     destination => "/tmp/${file_name}",
     timeout     => 600,
     verbose     => true,
+    unless      => "test -x /usr/bin/envconsul && /usr/bin/envconsul --version 2>&1 | grep -q '${envconsul::version}'",
+    notify      => Exec['unpack'],
   }
 }
