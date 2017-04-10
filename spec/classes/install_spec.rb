@@ -5,7 +5,7 @@ describe 'envconsul::install' do
     let(:params) { { :file_name => 'file.zip' } }
 
     it { is_expected.to contain_exec('unpack')
-          .with( :command => 'unzip /tmp/file.zip')
+          .with( :command => 'unzip -o /tmp/file.zip')
     }
   end
 
