@@ -5,7 +5,7 @@ class envconsul::install (
 ){
   if $file_name =~ /^.*\.zip/ {
     exec { 'unpack':
-      command     => "unzip /tmp/${file_name}",
+      command     => "unzip -o /tmp/${file_name}",
       cwd         => '/usr/bin',
       path        => ['/bin', '/usr/bin', '/usr/local/bin'],
       refreshonly => true,
