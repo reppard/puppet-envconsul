@@ -27,6 +27,7 @@ class envconsul::install (
 
   file { 'cleanup_file':
     ensure => absent,
+    backup => false,
     path   => "/tmp/${file_name}",
   }
 }
