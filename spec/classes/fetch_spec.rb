@@ -16,5 +16,5 @@ describe 'envconsul::fetch' do
     ].join
   end
 
-  it { should contain_wget__fetch('file_url').with_source(expected_url) }
+  it { should contain_wget__fetch('envconsul_file_url').with_source(expected_url) }
 end
